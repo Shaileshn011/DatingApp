@@ -1,0 +1,12 @@
+<div class="col-12">
+  <table class="table table-triped">
+    <tr>
+      <th>Summary</th><th>temperatureC</th><th>temperatureF</th>
+    </tr>
+    <tr *ngFor="let item of values">
+      <td>{{item.summary}}</td>
+      <td>{{item.temperatureC}}</td>
+      <td>{{item.temperatureF}}</td>
+    </tr>
+</table>
+</div>

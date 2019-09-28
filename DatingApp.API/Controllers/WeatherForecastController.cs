@@ -28,19 +28,20 @@ namespace DatingApp.API.Controllers
         //     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         // };        
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> Get()
         {       
             var Summaries= await _context.Values.ToListAsync(); 
-            var rng = new Random();
-            var data=  Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Count)].Name
-            })
-            .ToArray();
-            return Ok(data);
+            // var rng = new Random();
+            // var data=  Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            // {
+            //     Date = DateTime.Now.AddDays(index),
+            //     TemperatureC = rng.Next(-20, 55),
+            //     Summary = Summaries[rng.Next(Summaries.Count)].Name
+            // })
+            // .ToArray();
+            return Ok(Summaries);
         }
 
         [AllowAnonymous]
